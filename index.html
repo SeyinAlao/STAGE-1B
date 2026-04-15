@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card - Alao Oluwaseyin</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
+
+  <main class="page-wrapper">
+    <article class="profile-card" data-testid="test-profile-card">
+      
+      <figure class="avatar-section">
+        <div class="image-wrapper">
+          <img 
+            src="profile-image.png" 
+            alt="Portrait of Alao Oluwaseyin" 
+            data-testid="test-user-avatar"
+            class="avatar-image"
+          >
+        </div>
+      </figure>
+
+      <div class="content-section">
+        
+        <header class="card-header">
+          <h2 class="user-name" data-testid="test-user-name">Alao Oluwaseyin</h2>
+          
+          <div class="time-tracker">
+            <span class="time-label">Sys Time (ms):</span>
+            <time id="epoch-time" data-testid="test-user-time" aria-live="polite" aria-atomic="true">Loading...</time>
+          </div>
+        </header>
+
+        <p class="user-bio" data-testid="test-user-bio">
+          I got into frontend because I wanted to make things, not just code them. The gap between what works and what feels right is where I spend most of my time. Both worlds' code and life ask the same question: what does it mean to do something with care?
+        </p>
+
+        <div class="info-grid">
+          
+          <section class="list-container">
+            <h3 class="list-title">Hobbies</h3>
+            <ul class="custom-list" data-testid="test-user-hobbies">
+              <li>Going on sidequests</li>
+              <li>Playing games</li>
+              <li>Writing code that wouldn't break in production</li>
+            </ul>
+          </section>
+
+          <section class="list-container">
+            <h3 class="list-title">Dislikes</h3>
+            <ul class="custom-list dislikes" data-testid="test-user-dislikes">
+              <li>Being bored</li>
+              <li>Codes that break in production</li>
+              <li>Still using HTML, CSS, and JS</li>
+            </ul>
+          </section>
+
+        </div>
+
+        <nav aria-label="Social connections" class="social-nav">
+          <ul class="social-links" data-testid="test-user-social-links">
+            <li>
+              <a href="https://github.com/SeyinAlao" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github" class="social-link">GitHub</a>
+            </li>
+            <li>
+              <a href="https://x.com/seyinalao" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter" class="social-link">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/seyinalao" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin" class="social-link">LinkedIn</a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

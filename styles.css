@@ -1,0 +1,256 @@
+
+:root {
+  --bg:     #F0E6D0;
+  --bg2:    #E8DBCA;
+  --bg3:    #DFD1BC;
+  --ink:    #1E1B15;
+  --ink2:   #2E2A20;
+  --green:  #2E4B3C;
+  --amber:  #8A6A3A;
+  --muted:  #8C8070;
+  --soft:   #A89880;
+  --line:   rgba(30,27,21,0.1);
+  --line2:  rgba(30,27,21,0.16);
+  
+  --font-header: 'Space Mono', monospace;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.78;
+  cursor: none; 
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  z-index: 9999;
+}
+.custom-cursor.hovering {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(46, 75, 60, 0.1);
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.profile-card {
+  background: var(--bg2);
+  border: 1px solid var(--line2);
+  border-radius: 12px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  box-shadow: 10px 10px 0px var(--line);
+  position: relative;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--bg);
+  box-shadow: 0 4px 20px var(--line2);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.avatar-image:hover {
+  transform: scale(1.05);
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+}
+
+.user-name {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--green); 
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.time-tracker {
+  font-family: var(--font-header);
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: var(--bg3);
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.user-bio {
+  font-size: 1.05rem;
+  color: var(--ink2);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: var(--bg3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.list-title {
+  font-family: var(--font-header);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.custom-list {
+  list-style: none;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.custom-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-family: var(--font-header);
+}
+
+.custom-list.dislikes li::before {
+  content: '×';
+  color: var(--amber);
+}
+
+.social-nav {
+  margin-top: 1rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  font-family: var(--font-header);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover, .social-link:focus-visible {
+  color: var(--green);
+}
+
+.social-link:hover::after, .social-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+a:focus-visible {
+  outline: 2px dashed var(--amber);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .image-wrapper {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
