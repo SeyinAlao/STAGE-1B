@@ -1,6 +1,6 @@
 # Stage 1B Task: Testable Profile Card
 
-**Live Demo:** [Insert your Live URL here]
+**Live Demo:** https://seyinalao.github.io/STAGE-1B/
 
 ## Overview
 This project is a responsive, accessible, and interactive Profile Card component built strictly with semantic HTML5, modern CSS (Grid/Flexbox), and Vanilla JavaScript. It was designed to meet strict automated testing requirements while maintaining a unique, "editorial" aesthetic.
